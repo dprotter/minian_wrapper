@@ -1,0 +1,49 @@
+paths:
+  video_directory: /home/
+  save_directory: /home/
+  minian_path: '.'
+save_minain:
+  meta_dic:
+    session: -1
+    animal: -1
+  overwrite: True
+
+param_load_video:
+  pattern: '*.avi'
+  downsample:
+    frame: 1
+    height: 1
+    width: 1
+  dtype: uint8
+  downsample_strategy: subset
+
+clean_up:
+  remove_int_folder: False
+  save_MC_video: False
+  
+param_background_removal:
+  method: tophat
+  wnd: 10
+
+param_estimate_motion:
+  dim: frame
+
+param_denoise:
+  method: median
+  ksize: 3
+
+param_cluster:
+  minian_workers: 10
+  memory_limit: 5GB
+  threads_per_worker: 2
+
+param_update_spatial:
+  iteration:
+    1:
+      dl_wnd: 10
+      sparse_penal: 0.01
+      size_thres: [25, None]
+    2:
+      dl_wnd: 10
+      sparse_penal: 0.01
+      size_thres: [25, None]
