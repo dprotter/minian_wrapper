@@ -1,7 +1,8 @@
 paths:
-  video_directory: /home/
-  save_directory: /home/
-  minian_path: '.'
+  #"use ~ to load as python NoneType. These will default to video directory"
+  video_directory: ~
+  save_directory: ~
+  minian_path: '/home/'
 save_minain:
   meta_dic:
     session: -1
